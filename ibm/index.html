@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Recruitment Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Campus Recruitment Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="ssc_p">SSC Percentage:</label>
+        <input type="text" id="ssc_p" name="ssc_p"><br><br>
+        <!-- Add other input fields here -->
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is defined %}
+        <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
